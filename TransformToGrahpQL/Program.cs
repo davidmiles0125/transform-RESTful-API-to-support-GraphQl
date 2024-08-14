@@ -77,5 +77,7 @@ public class UserRolesQueryExtensions
         return await context.BatchDataLoader<int, Role[]>(async (ids, ct)
             => await roleService.GetRolesByUserId(ids))
             .LoadAsync(user.Id);
+
+            
     }
 }
